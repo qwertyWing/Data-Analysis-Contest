@@ -10,6 +10,7 @@ df2.columns=['REFERENCE_ID','MEASURED_WAVE','QUALITY']
 df = df.replace({'QUALITY' : 'GOOD'}, 0)
 df1 = df.replace({'QUALITY' : 'BAD'}, 1)
 
+# 전처리 코드
 df8 = df2['MEASURED_WAVE'].str.split(', ')
 df5 = df8.apply(lambda x: pd.Series(x))
 df5.columns=['T'+str(i) for i in range(0,200)]
